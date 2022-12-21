@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="https://unpkg.com/boxicons@latest/css/boxicons.min.css">
+
+    <script>
+      function greetUser(){
+        var dominantHand;
+        var lastName;
+
+        dominantHand = prompt("Are you left- or right-handed?", "") || "";
+        dominantHand = dominantHand.toLowerCase();
+        if(dominantHand !== "right" && dominantHand !== "left"){
+          dominantHand = prompt("Please enter either 'right' or 'left'.", "") || "";
+        }
+
+        lastName = prompt("What is your last name?", "") || "";
+        const firstLetter = lastName.substring(0, 1);
+        if(lastName.length === 0){
+          lastName = prompt("Please enter your last name.", "") || "";
+        }
+        else if(!isNaN(lastName)){
+          lastName = prompt("Last name cannot be a number. Please enter your last name.", "") || "";
+        }
+        else if(firstLetter === firstLetter.toLowerCase()){
+          lastName = prompt("Please make sure your last name starts with a capital letter.", "") || "";
+        }
+
+        switch (dominantHand){
+          case "right":
+            alert("Hello Righty " + lastName + "!");
+            break;
+          case "left":
+            alert("Hello Lefty " + lastName + "!");
+            break;
+          default:
+            alert(dominantHand + " is not a valid value for dominant hand!");
+        }
+      }
+    </script>
+    <title>Activity 2</title>
+    <style>
+      *{
+        padding: 0;
+        margin: 20px;
+        background: #696969;
+        font-family: sans-serif;
+      }
+
+      nav{
+        color: #ffffff;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 1rem 2rem;
+      }
+
+      nav a{
+        color: #ffffff;
+        text-decoration: none;
+        font-size: 23px;
+        font-weight: bolder;
+      }
+
+      nav a:hover{
+        color: #212121;
+        font-weight: bolder;
+      }
+
+      body{
+        margin: 25px;
+        padding: 2rem;
+        text-align: center;
+      }
+
+      main{
+        display: inline-block;
+        padding-top: 60px;
+        padding-bottom: 60px;
+
+      }
+
+      #greeting-button{
+        padding: 15px 32px;
+        cursor: pointer;
+        font-size: 22px;
+        border-radius: 10px;
+        color: #ffffff;
+        font-weight: 200;
+        margin-bottom: 30px;
+        margin: 4px 2px;
+        background: transparent;
+        transition: ease-out 0.9s;
+        box-shadow: inset 0 0 0 0 #8c52ff;
+        position: relative;
+        font-weight: bold;
+      }
+
+      #greeting-button:hover{
+        color: #000000;
+        box-shadow: inset 0 -100px 0 0 #8c52ff;
+        font-weight: bold;
+      }
+
+      footer{
+        background: #212121;
+        color: #ffffff;
+        margin-top: 50px;
+        padding: 0.5rem 1rem;
+        text-align: center;
+      }
+    </style>
+  </head>
+
+  <body>
+    <nav>
+      <a href="index.html"><i class='bx bx-arrow-back'> Home</i></a>
+    </nav>
+
+    <main>
+      <button id="greeting-button" onclick="greetUser()">Activity 2</button>
+    </main>
+
+      <footer>Copyright © 2022 by Jaimee Romero. All Rights Reserved.</footer>
+  </body>
+</html>

@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="https://unpkg.com/boxicons@latest/css/boxicons.min.css">
+
+    <script>
+      function dayAsString(num){
+        var weekdays = [];
+        weekdays[0] = 'Sunday';
+        weekdays[1] = 'Monday';
+        weekdays[2] = 'Tuesday';
+        weekdays[3] = 'Wednesday';
+        weekdays[4] = 'Thursday';
+        weekdays[5] = 'Friday';
+        weekdays[6] = 'Saturday';
+
+        return weekdays[num-1];
+      }
+
+      function enterDay(){
+        var userDay = prompt("Enter a day of the week (in number).", "");
+        alert("You enter " + dayAsString(userDay) + ".");
+      }
+
+      function getCurrentDay(){
+        var today = new Date();
+        alert(dayAsString(today.getDay() + 1));
+      }
+    </script>
+    <title>Activity 1</title>
+
+    <style media="screen">
+  *{
+    padding: 0;
+    margin: 20px;
+    background: #696969;
+    font-family: sans-serif;
+  }
+
+  nav{
+    color: #ffffff;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 2rem;
+  }
+
+  nav a{
+    color: #ffffff;
+    text-decoration: none;
+    font-size: 23px;
+    font-weight: bolder;
+  }
+
+  nav a:hover{
+    color: #212121;
+    font-weight: bolder;
+  }
+
+  body{
+    margin: 25px;
+    padding: 2rem;
+    text-align: center;
+  }
+
+  .btn{
+    display: inline-block;
+    padding-top: 60px;
+    padding-bottom: 60px;
+  }
+
+  #btn-1{
+    padding: 20px;
+    cursor: pointer;
+    font-size: 15px;
+    border-radius: 10px;
+    color: #ffffff;
+    font-weight: bold;
+    margin-right: 15px;
+    margin-bottom: 7px;
+  }
+
+  #btn-2{
+    padding: 20px;
+    cursor: pointer;
+    font-size: 15px;
+    border-radius: 10px;
+    color: #ffffff;
+    font-weight: bold;
+    margin-bottom: 7px;
+  }
+
+  #btn-1:hover{
+    color: #ffffff;
+    background: #8c52ff;
+    transform: scale(1.1);
+    transition: ease .5s;
+    border-width: thin;
+  }
+
+  #btn-2:hover{
+    color: #ffffff;
+    background: #8c52ff;
+    transform: scale(1.1);
+    transition: ease .5s;
+    border-width: thin;
+  }
+
+  footer{
+    background: #212121;
+    color: #ffffff;
+    margin-top: 20px;
+    padding: 0.5rem 1rem;
+    text-align: center;
+  }
+</style>
+  </head>
+
+  <body>
+    <nav>
+      <a href="index.html"><i class='bx bx-arrow-back'> Home</i></a>
+    </nav>
+
+      <div class="btn">
+        <button onclick="enterDay()" id="btn-1">CHOOSE DAY</button>
+        <button onclick="getCurrentDay()" id="btn-2">GET CURRENT DAY</button>
+      </div>
+
+    <footer>Copyright © 2022 by Jaimee Romero. All Rights Reserved.</footer>
+  </body>
+</html>
